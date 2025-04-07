@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teams>
+  <team category="U15">
+    <lib lang="fr">equipe 1</lib>
+    <niv>R1</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 2</lib>
+    <niv>R2</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 3</lib>
+    <niv>D1</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 4</lib>
+    <niv>D2</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 5</lib>
+    <niv>D2</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 6</lib>
+    <niv>D3</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 7</lib>
+    <niv>D3</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 8</lib>
+    <niv>D3</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 9</lib>
+    <niv>D3</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 10</lib>
+    <niv>D4</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 11</lib>
+    <niv>D4</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 12</lib>
+    <niv>D4</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 13</lib>
+    <niv>D4</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 14</lib>
+    <niv>D4</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 15</lib>
+    <niv>D4</niv>
+  </team>
+  <team category="U15">
+    <lib lang="fr">equipe 16</lib>
+    <niv>D4</niv>
+  </team>
+</teams>

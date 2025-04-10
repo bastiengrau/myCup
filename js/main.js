@@ -8,6 +8,7 @@ async function getData(params) {
 }
 
 getData();
+//console.log(random());
 
 function toObj(xml) {
   const teamArray = [];
@@ -20,7 +21,7 @@ function toObj(xml) {
     });
   });
   totalRoundCalcul(teamArray);
-  console.log(totalRoundCalcul(teamArray));
+  console.log(teamArray);
 }
 
 function round(table) {}
@@ -29,11 +30,17 @@ function totalRoundCalcul(table) {
   const teamsCount = table.length;
   console.log(teamsCount);
   const totalRoundNumber = 0;
-  for (let i = 2; i < teamsCount; i + i) {
-    totalRoundNumber + 1;
+  
+  console.log(Math.round(teamsCount % 4));
+  if (Math.round(teamsCount % 4) != 0) {
+    table.push({
+      lib: "exempt",
+      niv: 0,
+      round: 1,
+    });
+  } else {
+    return totalRoundNumber;
   }
-  console.log(totalRoundNumber);
-  return totalRoundNumber;
 }
 
 function weightedRand(spec) {
@@ -46,8 +53,14 @@ function weightedRand(spec) {
   }
 }
 
-function random() {
-  for (let i = 0; i < 9; i++) {
-    weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
-  }
+function randomNoob() {
+    return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
+}
+
+function minusNoob() { // modifier les paramètres d'aléatoire
+    return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
+}
+
+function randomHeavy() { // modifier les paramètres d'aléatoire
+    return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
 }

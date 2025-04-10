@@ -4,7 +4,8 @@ async function getData(params) {
   const parser = new DOMParser();
   const xml = parser.parseFromString(data, "text/xml");
 
-  toObj(xml);
+  const teamsArray = toObj(xml);
+  totalRoundCalcul(teamsArray);
 }
 
 getData();
@@ -20,27 +21,52 @@ function toObj(xml) {
       round: "",
     });
   });
-  totalRoundCalcul(teamArray);
-  console.log(teamArray);
+  return teamArray;
 }
 
 function round(table) {}
 
 function totalRoundCalcul(table) {
+  console.log(table);
   const teamsCount = table.length;
-  console.log(teamsCount);
-  const totalRoundNumber = 0;
-  
-  console.log(Math.round(teamsCount % 4));
-  if (Math.round(teamsCount % 4) != 0) {
+  var roundNumber = 1;
+  const finalTable = exemptManager("add", table, teamsCount);
+  console.log(finalTable);
+  while (teamsCount / 2 != 1) {
+    roundNumber = roundNumber + 1;
+    teamsCount = teamsCount / 2;
+  }
+  console.log(roundNumber);
+}
+
+function exemptManager(event, table = [], nbTeams = 0) {
+  console.dir(event);
+  switch (event) {
+    case "add":
+      return addExempt(table, nbTeams);
+      break;
+    case "exVsEx":
+      break;
+    default:
+      break;
+  }
+}
+
+function addExempt(table, nbTeams) {
+  console.log(nbTeams);
+  var i = 0;
+  const exempt = "exempt";
+
+  for (let i = nbTeams; i < 32; i++) {
+    console.log(i);
     table.push({
-      lib: "exempt",
-      niv: 0,
+      lib: exempt.concat(i + 1),
+      niv: "NAN",
       round: 1,
     });
-  } else {
-    return totalRoundNumber;
+    console.log(table);
   }
+  return table;
 }
 
 function weightedRand(spec) {
@@ -54,13 +80,15 @@ function weightedRand(spec) {
 }
 
 function randomNoob() {
-    return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
+  return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
 }
 
-function minusNoob() { // modifier les paramètres d'aléatoire
-    return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
+function randomMinusNoob() {
+  // modifier les paramètres d'aléatoire
+  return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
 }
 
-function randomHeavy() { // modifier les paramètres d'aléatoire
-    return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
+function randomHeavy() {
+  // modifier les paramètres d'aléatoire
+  return weightedRand({ 0: 0.8, 1: 0.1, 2: 0.1 });
 }
